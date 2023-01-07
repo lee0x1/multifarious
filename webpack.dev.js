@@ -12,7 +12,7 @@ module.exports = {
   devServer: {
     static: path.join(__dirname, "src"),
     hot: true,
-    open: true,
+    open: false,
   },
   devtool: "inline-source-map",
   plugins: [
