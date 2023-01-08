@@ -13,4 +13,17 @@ module.exports = merge(common, {
   watchOptions: {
     ignored: /node_modules/,
   },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/i,
+        use: [
+          { loader: 'style-loader', options: {}},
+          { loader: 'css-loader', options: { sourceMap: true }},
+          { loader: 'postcss-loader', options: { sourceMap: true }},
+          { loader: 'sass-loader', options: { sourceMap: true }},
+        ]
+      }
+    ]
+  }
 });
