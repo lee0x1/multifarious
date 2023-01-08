@@ -30,7 +30,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
+      filename: 'assets/css/[name].[contenthash].css',
     })
   ]
 });
