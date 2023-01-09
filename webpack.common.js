@@ -27,6 +27,17 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name].[contenthash][ext]'
+        }
+      },
     ],
   },
 };
