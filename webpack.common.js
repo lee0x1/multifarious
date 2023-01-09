@@ -38,6 +38,13 @@ module.exports = {
           filename: 'assets/images/[name].[contenthash][ext]'
         }
       },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name].[contenthash][ext]'
+        }
+      },
     ],
   },
 };
