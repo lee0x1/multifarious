@@ -11,7 +11,7 @@ module.exports = {
         template: path.resolve('./src/index.html')
   })],
   output: {
-    filename: '[name].[contenthash].bundle.js',
+    filename: 'assets/scripts/[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, './dist'),
     clean: true,
   },
@@ -26,6 +26,17 @@ module.exports = {
             presets: ['@babel/preset-env'],
           },
         },
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name].[contenthash][ext]'
+        }
       },
     ],
   },
