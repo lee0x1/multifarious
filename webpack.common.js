@@ -1,5 +1,6 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -9,7 +10,9 @@ module.exports = {
     new htmlWebpackPlugin({ 
         title: 'Quest Proto',
         template: path.resolve('./src/index.html')
-  })],
+    }),
+    new ESLintPlugin(),
+  ],
   output: {
     filename: 'assets/scripts/[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, './dist'),
